@@ -1,0 +1,100 @@
+/* This is an MVP for an OBS overlay for levelcup.com/race
+/* Feedback is requested.
+
+/* To install, add a "Browser" source to OBS. Settings are as follows:
+/* URL: https://www.levelcup.net/race
+/* Width: 1920
+/* Height: 1080 (if your canvas resolution is lower than this just rescale the source after adding
+/* Use custom frame rate - no?
+/* Control audio via OBS - maybe?
+/* Custom CSS: copy and paste THIS FILE into this option
+/* Shutdown source when not visible - yes
+/* Refresh browser when scene becomes active - probably
+*/
+
+body, .container { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; background-image: none;}
+
+.header, .card-header-race, .card-body, .footer, .card-rules.pad-bottom > div:first-child, a.racelevellink i, .race-bookmark, .spinner-container, .winner-box img, .timeBox h4, .clock-container h1 {display: none !important;}
+
+/* fonts */
+.racelevellink:not([href]), .timeBox, .first-award, .second-award, .third-award, .th, span h1, div.td, .race-winner-text{-webkit-text-stroke-width: 0.05em; -webkit-text-stroke-color: #212529; color: #EEEEEE; font-weight: bold !important;}
+.racelevellink:not([href]), .timeBox, span h1 {font-size: 32pt !important}
+.race-winner-text {font-size: 24pt !important;}
+.td, .th {font-size: 12pt !important;}
+
+.second-race, .second-race-text, .second-award {color: silver !important;}
+.third-race, .third-race-text, .third-award {color: #cd7f32 !important;}
+* {background-image: none !important;}
+
+.container {max-width: none;}
+.card {border: 0; box-shadow: none; width: auto; margin: 0; background-color: rgba(0, 0, 0, 0);}
+.card-rules.pad-bottom {padding: 0; margin: 0; display: grid; grid-template-columns: 25% 35% 9% 15% 1fr; grid-auto-flow: dense;}
+
+/* General Positioning of multiple elements with CSS selection methods that are available*/
+.row.justify-content-center {grid-column: 4; grid-row-start: 1; grid-row-end:99;}
+.row {margin: 0;}
+.row.rh {grid-column: 1; grid-row: 1;}
+.row.tr.justify-content-center.align-items-center {grid-column: 1; grid-row: auto;}
+.th {padding: 0; background-color: rgb(0, 0, 0, 0);}
+
+/* Headers */
+/* there may be collateral damage */
+.card-rules.pad-bottom > .row.justify-content-center:not(.tr), .clock-container, .row.rh, .row.tr.justify-content-center.align-items-center, .winner-box, .card.race-card > div > span > h1 {background-color: rgba(0, 0, 0, 0.65); align-self: start; padding: 0px 15px;}
+
+/* Level Code (link)*/
+/* there may be collateral damage */
+.card-rules.pad-bottom > .row.justify-content-center:not(.tr) {justify-self: left;}
+
+/* The clock */
+.clock-container {grid-column: 3; grid-row-start: 1; grid-row-end: 99; margin: 0; justify-self: right;}
+
+.timeBox {margin: 0; padding: 0; background-color: rgba(0, 0, 0, 0); width: auto;}
+.timeBox:first-child::after {content: ':'; position: relative;}
+.timeBox:first-child {text-align: right;}
+.timeBox:nth-child(2) {text-align: left;}
+.timeBox span {display: inline-block;}
+
+/* Box showing the winners */
+.winner-box {grid-column: 2; grid-row-start: 1; grid-row-end: 99; height: auto; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 10px;}
+/*.winner-box:before {content: ''; position: relative; height: 100%; bottom: 0; top: -1000px;}*/
+.tpy-1, .tpy-2, .tpy-3 {position: static; height: auto; width: auto; display: grid; grid-row: 1;}
+
+.tpy-1 {grid-column: 2;}
+.tpy-2 {grid-column: 1;}
+.tpy-3 {grid-column: 3;}
+
+.score-bar1, .score-bar2,  .score-bar3 {border: none; height: auto; width: auto; padding: 0; margin: 0; animation: none; grid-row: 1;}
+.second-award, first-award, .third-award {width: auto; grid-row: 2;}
+.race-winner-text {margin-bottom: 0; margin-top: auto;}
+
+/* Competitors Box*/
+/* setting the second column size will auto-scale the image */
+.row.rh, .row.tr.justify-content-center.align-items-center {display:grid; grid-template-columns: 14% 8% 1fr 17% 8% 8% 8%; /*grid-auto-flow: column;*/}
+.row.tr.justify-content-center.align-items-center {justify-content: left !important;}
+.row.rh div {max-width: none;}
+/*.td {margin: 0;}*/
+
+.col-md-1.d-none.d-md-block.td.center img {width: 100%; height: auto;}
+
+.col-md-1, .col-md-2, .col-md-4 {padding: 0; margin:0;}
+.col-md-1, .col-md-2, .col-md-4 {max-width: none;}
+
+.col-md-1.d-none.d-md-block.th, .medal-col, .medal-col2 {text-align: right;}
+.col-md-2.col-3.td.center {text-align: left;}
+.row.tr.justify-content-center.align-items-center {border: none; height: auto; padding-top: 10px; padding-bottom: 10px; border-radius: unset;}
+
+.first-race, .first-race-text, .second-race, .second-race-text, .third-race, .third-race-text, .other-race, .other-race-text {font-size: 1.3em; font-weight: bold;}
+
+.medal-text {display: block; text-align: right;}
+.medal-col, .medal-col-2 {height: auto; width: auto;}
+
+
+
+/* loading results screen */
+.card.race-card > div > span > h1 {padding-bottom: 10px; width: 30%;}
+
+
+
+
+
+/*.clock-container h1:before {content: 'until next level'; visbility: visible;}*/
