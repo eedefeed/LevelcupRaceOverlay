@@ -69,15 +69,28 @@ body, .container { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflo
 
 /* Competitors Box*/
 /* setting the second column size will auto-scale the image */
-.row.rh, .row.tr.justify-content-center.align-items-center {display:grid; grid-template-columns: 14% 8% 1fr 17% 8% 8% 8%; /*grid-auto-flow: column;*/}
+.row.rh, .row.tr.justify-content-center.align-items-center {display:grid; grid-template-columns: 17% 8% 1fr 20% 24% 0% ; /*grid-auto-flow: column;*/}
+
+.row.rh > div.col-md-2 > div.row.rh {display:grid; grid-template-columns: 1fr 1fr 1fr ; grid-column: 12; /*grid-auto-flow: column;*/}
+
+.row.tr.justify-content-center.align-items-center > div.col-md-2 > div.row {display:grid; grid-template-columns: 1fr 1fr 1fr;}
+
+.row.tr.justify-content-center.align-items-center > div.col-md-2 > div.row > div.col-md-4 {text-align:center}
+
+
+.medal-text > img {display: none}
+
 .row.tr.justify-content-center.align-items-center {justify-content: left !important;}
 .row.rh div {max-width: none;}
+
+.pointsBar { display: none !important;}
+.backgroundBar { display: none !important;}
 /*.td {margin: 0;}*/
 
 .col-md-1.d-none.d-md-block.td.center img {width: 100%; height: auto;}
 
-.col-md-1, .col-md-2, .col-md-4 {padding: 0; margin:0;}
-.col-md-1, .col-md-2, .col-md-4 {max-width: none;}
+.col-md-1, .col-md-3 .col-md-2, .col-md-4 {padding: 0; margin:0;}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4 {max-width: none;}
 
 .col-md-1.d-none.d-md-block.th, .medal-col, .medal-col2 {text-align: right;}
 .col-md-2.col-3.td.center {text-align: left;}
